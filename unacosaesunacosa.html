@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Una cosa es una cosa</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+
+<body class="pagina-obra">
+
+
+
+<div class="fondo-obra"></div>
+
+
+
+<div class="overlay-obra"></div>
+
+
+
+<section class="contenido-obra">
+
+  <h1>Una cosa es una cosa</h1>
+
+  <p class="fecha">1990 · María Teresa Hincapié</p>
+
+
+
+  <div class="texto-obra">
+
+    <p>
+      <strong>Una cosa es una cosa</strong> es la obra más emblemática
+      de María Teresa Hincapié y un punto de giro en el arte colombiano.
+      No era solamente organizar objetos: representaba una filosofía
+      profunda sobre la existencia.
+    </p>
+
+
+
+    <h2>1. La sacralización de lo cotidiano</h2>
+
+    <p>
+      Hincapié tomó objetos comunes como bolsas de plástico,
+      utensilios de cocina, piedras o ropa y, mediante acciones
+      lentas y repetitivas, los convirtió en algo ritual.
+      La obra representaba que cualquier acto mínimo hecho
+      con total atención puede convertirse en una experiencia sagrada.
+    </p>
+
+
+
+    <h2>2. El orden como estructura mental</h2>
+
+    <p>
+      Durante horas organizaba y reorganizaba objetos.
+      Al clasificarlos por color, tamaño o función,
+      construía una estructura de pensamiento en el espacio,
+      intentando dar orden al caos.
+    </p>
+
+
+
+    <h2>3. Una crítica al consumismo</h2>
+
+    <p>
+      Usaba sus propias pertenencias, muchas desgastadas,
+      para cuestionar la necesidad constante de adquirir más cosas.
+      La obra proponía entender la relación emocional y consciente
+      que tenemos con los objetos que ya poseemos.
+    </p>
+
+
+
+    <h2>4. La narrativa del tiempo</h2>
+
+    <p>
+      Al ser una obra de larga duración, el verdadero centro
+      era el paso del tiempo y el agotamiento del cuerpo.
+      El público observaba un cuerpo construyendo y reorganizando
+      continuamente el espacio.
+    </p>
+
+
+
+    <h2>5. “Una cosa es una cosa”</h2>
+
+    <p>
+      El título parece obvio, pero propone que cada objeto
+      tiene una identidad única y merece ser observado
+      por lo que realmente es.
+    </p>
+
+  </div>
+
+
+
+  <button id="boton-sonido" class="boton-sonido">
+
+    Escuchar sonido
+
+  </button>
+
+
+
+  <a href="mariateresahincapie.html" class="volver-obra">
+
+    ← Volver
+
+  </a>
+
+</section>
+
+
+
+<audio id="audio-obra">
+
+  <source src="assets/unacosaesunacosa.MP3" type="audio/mpeg">
+
+</audio>
+
+
+
+<script>
+
+const boton = document.getElementById("boton-sonido");
+
+const audio = document.getElementById("audio-obra");
+
+boton.addEventListener("click", () => {
+
+  audio.play();
+
+});
+
+</script>
+
+
+
+</body>
+</html>

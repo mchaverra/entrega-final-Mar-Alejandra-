@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>María Teresa Hincapié</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+
+
+<body class="pagina-artista">
+
+
+
+<section class="info-artista">
+
+  <h1>María Teresa Hincapié</h1>
+
+  <h3>El cuerpo como ritual</h3>
+
+  <p class="subtitulo">
+    Pionera del arte de acción en Colombia (1954–2008)
+  </p>
+
+
+
+  <div class="bloque-info">
+
+    <h2>¿Quién fue?</h2>
+
+    <p>
+      Nació en Armenia, Quindío, y se formó en teatro experimental.
+      Fue una de las artistas más importantes del performance en Colombia
+      y América Latina.
+    </p>
+
+    <p>
+      Transformó acciones domésticas y cotidianas en actos rituales,
+      contemplativos y políticos.
+    </p>
+
+  </div>
+
+
+
+  <div class="bloque-info">
+
+    <h2>¿Por qué es un hito?</h2>
+
+    <p>
+      En 1990 fue la primera artista en ganar el Salón Nacional
+      de Artistas con un performance.
+    </p>
+
+    <p>
+      Propuso el “pensamiento de la mano”, donde el conocimiento
+      también surge del cuerpo y la repetición.
+    </p>
+
+    <p>
+      Su obra critica la velocidad del mundo contemporáneo,
+      el consumo y la desconexión sensible.
+    </p>
+
+  </div>
+
+
+
+  <div class="bloque-info">
+
+    <h2>Ejes conceptuales</h2>
+
+    <ul>
+
+      <li>
+        <strong>Lo cotidiano:</strong>
+        barrer y ordenar como meditación.
+      </li>
+
+      <li>
+        <strong>El cuerpo-archivo:</strong>
+        el cansancio como conciencia.
+      </li>
+
+      <li>
+        <strong>Relación con la tierra:</strong>
+        caminatas rituales y paisaje.
+      </li>
+
+    </ul>
+
+  </div>
+
+
+
+  <a href="index.html" class="boton-home">
+    Volver al home
+  </a>
+
+</section>
+
+
+
+
+
+<section class="contenedor-postcards">
+
+  <a href="unacosaesunacosa.html" class="postcard" id="card1">
+
+    <img src="assets/fotounacosaesunacosa.avif">
+
+    <h2>Una cosa es una cosa</h2>
+
+  </a>
+
+
+
+  <a href="vitrina.html" class="postcard" id="card2">
+
+    <img src="assets/fotovitrina.jpg">
+
+    <h2>Vitrina</h2>
+
+  </a>
+
+
+
+  <a href="divinaproporcion.html" class="postcard" id="card3">
+
+    <img src="assets/fotoDivinaproporción.jpg">
+
+    <h2>Divina Proporción</h2>
+
+  </a>
+
+
+
+  <a href="parquedades.html" class="postcard" id="card4">
+
+    <img src="assets/post4.jpg">
+
+    <h2>Parquedades</h2>
+
+  </a>
+
+
+
+  <a href="principiodeinfinito.html" class="postcard" id="card5">
+
+    <img src="assets/infinito.webp">
+
+    <h2>Principio de infinito</h2>
+
+  </a>
+
+</section>
+
+
+
+
+
+<script>
+
+const postcards = document.querySelectorAll(".postcard");
+
+postcards.forEach(card => {
+
+  let isDragging = false;
+
+  let offsetX;
+  let offsetY;
+
+  card.addEventListener("mousedown", (e) => {
+
+    isDragging = true;
+
+    offsetX = e.clientX - card.offsetLeft;
+    offsetY = e.clientY - card.offsetTop;
+
+    card.style.cursor = "grabbing";
+
+  });
+
+
+
+  document.addEventListener("mousemove", (e) => {
+
+    if(!isDragging) return;
+
+    card.style.left = `${e.clientX - offsetX}px`;
+    card.style.top = `${e.clientY - offsetY}px`;
+
+  });
+
+
+
+  document.addEventListener("mouseup", () => {
+
+    isDragging = false;
+
+    card.style.cursor = "grab";
+
+  });
+
+
+
+  card.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+  });
+
+
+
+  card.addEventListener("dblclick", () => {
+
+    window.location.href = card.href;
+
+  });
+
+});
+
+</script>
+
+
+
+</body>
+</html>
