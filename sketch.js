@@ -25,17 +25,21 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1000, 900); // medidas del canvas
-  background(255);
+  let canvas = createCanvas(500, 380);
+canvas.parent("canvas-container");// medidas del canvas
+background(245, 242, 236);
 
   // capa de dibujo independiente
   drawLayer = createGraphics(640, 480);
   drawLayer.background(255);
 
-  // Video para detección (oculto)
   video = createCapture(VIDEO);
-  video.size(640, 480);
-  //video.hide();
+
+video.size(500, 380);
+
+video.style("border", "none");
+
+//video.hide();
 
   handPose.detectStart(video, gotHands);
 }

@@ -1,14 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ml5.js handPose Webcam Example</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.9/p5.min.js"></script>
-    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
-  </head>
-  <body>
-    <script src="sketch.js"></script>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Obra personal</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.9/p5.min.js"></script>
+  <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="pagina-obra">
+
+  <section class="intro-obra">
+
+    <div class="overlay-obra"></div>
+
+    <div class="texto-obra">
+
+      <p class="pequeno">
+        pensamiento de la mano
+      </p>
+
+      <h1>
+        construye tu propia acción
+      </h1>
+
+      <p class="descripcion">
+        María Teresa Hincapié entendía el cuerpo como un espacio de memoria,
+        repetición y transformación.
+        <br><br>
+        Aquí, el movimiento de tu mano también se convierte en una obra.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="zona-canvas">
+
+    <div class="texto-lateral">
+
+      <h2>Instrucciones</h2>
+
+      <p>
+        Levanta distintos dedos para cambiar la manera de dibujar.
+      </p>
+
+      <ul>
+        <li>Pulgar → trazo orgánico</li>
+        <li>Índice → aerosol</li>
+        <li>Corazón → línea negra</li>
+        <li>Anular → expansión del color</li>
+        <li>Meñique → borrar</li>
+      </ul>
+
+      <p class="nota">
+        No busques “dibujar bien”.
+        <br>
+        Explora el gesto, el tiempo y el movimiento.
+      </p>
+
+      <a href="mariateresahincapie.html" class="boton-volver">
+        volver
+      </a>
+
+    </div>
+
+    <div id="canvas-container"></div>
+
+  </section>
+
+  <script src="sketch.js"></script>
+
+</body>
 </html>

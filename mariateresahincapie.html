@@ -112,6 +112,19 @@
 
 <section class="contenedor-postcards">
 
+  <div class="instrucciones-postcards">
+
+  <p>
+    Explora las obras.
+  </p>
+
+  <p>
+    Puedes mover las postales libremente por la pantalla
+    y abrir cada obra con doble click.
+  </p>
+
+</div>
+
   <a href="unacosaesunacosa.html" class="postcard" id="card1">
 
     <img src="assets/fotounacosaesunacosa.avif">
@@ -153,63 +166,41 @@
 
 </section>
 
-
-
-
-
 <script>
 
 const postcards = document.querySelectorAll(".postcard");
 
+let activeCard = null;
+
+let offsetX = 0;
+let offsetY = 0;
+
 postcards.forEach(card => {
 
-  let isDragging = false;
-
-  let offsetX;
-  let offsetY;
+  // mantener posiciones iniciales del CSS
+  card.style.cursor = "grab";
 
   card.addEventListener("mousedown", (e) => {
 
-    isDragging = true;
+    activeCard = card;
 
     offsetX = e.clientX - card.offsetLeft;
     offsetY = e.clientY - card.offsetTop;
 
     card.style.cursor = "grabbing";
 
-  });
-
-
-
-  document.addEventListener("mousemove", (e) => {
-
-    if(!isDragging) return;
-
-    card.style.left = `${e.clientX - offsetX}px`;
-    card.style.top = `${e.clientY - offsetY}px`;
+    card.style.zIndex = "999";
 
   });
 
-
-
-  document.addEventListener("mouseup", () => {
-
-    isDragging = false;
-
-    card.style.cursor = "grab";
-
-  });
-
-
-
+  // evitar click normal
   card.addEventListener("click", (e) => {
 
     e.preventDefault();
 
   });
 
-
-
+  // abrir con doble click
   card.addEventListener("dblclick", () => {
 
     window.location.href = card.href;
@@ -218,9 +209,30 @@ postcards.forEach(card => {
 
 });
 
+// SOLO UN mousemove global
+document.addEventListener("mousemove", (e) => {
+
+  if (!activeCard) return;
+
+  activeCard.style.left = `${e.clientX - offsetX}px`;
+  activeCard.style.top = `${e.clientY - offsetY}px`;
+
+});
+
+// soltar
+document.addEventListener("mouseup", () => {
+
+  if (activeCard) {
+
+    activeCard.style.cursor = "grab";
+
+  }
+
+  activeCard = null;
+
+});
+
 </script>
-
-
 
 </body>
 </html>

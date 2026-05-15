@@ -329,11 +329,12 @@ body{
   box-shadow:0 10px 25px rgba(0,0,0,0.12);
 
   cursor:grab;
+  position: absolute;
 
-  transition:0.3s ease;
+  transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
 }
-
-
 
 .postcard:hover{
 
@@ -374,7 +375,7 @@ body{
 
   left:8vw;
 
-  transform:rotate(-4deg);
+  rotate: -4deg;
 }
 
 
@@ -385,7 +386,7 @@ body{
 
   left:28vw;
 
-  transform:rotate(3deg);
+  rotate: 3deg;
 }
 
 
@@ -396,7 +397,7 @@ body{
 
   left:48vw;
 
-  transform:rotate(-2deg);
+  rotate: -2deg;
 }
 
 
@@ -407,7 +408,7 @@ body{
 
   left:5vw;
 
-  transform:rotate(5deg);
+  rotate: 5deg;
 }
 
 
@@ -418,14 +419,8 @@ body{
 
   left:58vw;
 
-  transform:rotate(-5deg);
+  rotate: -5deg;
 }
-
-
-
-/* ========================= */
-/* PAGINA OBRA */
-/* ========================= */
 
 .pagina-obra{
 
@@ -439,8 +434,6 @@ body{
 
   color:white;
 }
-
-/* FONDO */
 
 .fondo-obra{
 
@@ -921,4 +914,236 @@ body{
   object-fit:contain;
 
   border-radius:4px;
+}
+
+/* ========================= */
+/* OBRA INDIVIDUAL */
+/* ========================= */
+
+.pagina-obra{
+    background-color: #d9d2c5;
+    color: #1f1f1f;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* HERO */
+
+.intro-obra{
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4rem;
+
+    background-image: url("assets/fondoobra.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-obra{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.texto-obra{
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+    text-align: center;
+    color: #f5f1ea;
+}
+
+.pequeno{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.texto-obra h1{
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+}
+
+.descripcion{
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ZONA INTERACTIVA */
+
+.zona-canvas{
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 2rem;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 5rem 4rem;
+
+    background-color: #ece6dc;
+}
+
+/* TEXTO */
+
+.texto-lateral{
+    width: 320px;
+
+    position: sticky;
+    top: 40px;
+}
+
+.texto-lateral h2{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.texto-lateral p{
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.texto-lateral ul{
+    margin-bottom: 2rem;
+    padding-left: 1.2rem;
+}
+
+.texto-lateral li{
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.nota{
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* BOTÓN */
+
+.boton-volver{
+    display: inline-block;
+
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+
+    border: 1px solid #1f1f1f;
+
+    text-decoration: none;
+    color: #1f1f1f;
+
+    transition: 0.3s ease;
+}
+
+.boton-volver:hover{
+    background-color: #1f1f1f;
+    color: #ece6dc;
+}
+
+/* CANVAS */
+
+#canvas-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas{
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+
+    border: 1px solid rgba(0,0,0,0.15);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+
+    background-color: white;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 1000px){
+
+    .zona-canvas{
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+    }
+
+    .texto-lateral{
+        width: 100%;
+        position: relative;
+        top: unset;
+    }
+
+    .texto-obra h1{
+        line-height: 1;
+    }
+
+}
+
+/* INSTRUCCIONES POSTCARDS */
+
+.instrucciones-postcards{
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
+
+    z-index: 20;
+
+    max-width: 300px;
+
+    background: rgba(255,255,255,0.5);
+
+    backdrop-filter: blur(10px);
+
+    padding: 1.2rem;
+
+    border: 1px solid rgba(0,0,0,0.1);
+
+    color: #1f1f1f;
+
+    line-height: 1.6;
+}
+
+.instrucciones-postcards p:first-child{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* VIDEO CAMARA */
+
+video{
+    width: 100%;
+    max-width: 500px;
+
+    height: auto;
+
+    object-fit: cover;
+
+    border: 1px solid rgba(0,0,0,0.15);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    filter:
+    grayscale(100%)
+    contrast(1.05);
+
+    background: white;
 }
